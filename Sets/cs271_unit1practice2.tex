@@ -1,0 +1,258 @@
+\documentclass[11pt, letter]{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fancyhdr, lastpage}
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{CS271: Data Structures} }
+\rhead{ \fancyplain{}{Fall 2023} }
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+\begin{document}
+\begin{center}
+{\Large \textsc{CS271: Data Structures}}\vspace{\baselineskip}\\
+
+Name: YOUR NAMES HERE\vspace{\baselineskip}\\
+Instructor: Dr. Stacey Truex
+\vspace{\baselineskip}\\
+\Large{Unit 1: Practice 2}
+\end{center}
+
+\section*{Asymptotic Proofs}
+
+Prove the following using the definitions of $O$, $\Omega$, and $\Theta$.
+    
+    \begin{enumerate}
+    
+    \item $100n + 10000 = O(n^2)$\\
+
+    Want to show that $\exists$ positive constants $c, n_0$ so that:
+    
+    \begin{center}
+    $0 \leq 100n + 10000 \leq cn^2$ $\forall n \geq n_0$
+    \end{center}
+    
+    \begin{equation*}
+        \begin{split}
+            100n + 10000 &> 0 \forall n \geq 0\\
+            \\
+            100n + 10000 &\leq 2n^2\\
+            \Leftrightarrow 2n^2 - 100n - 10000 &\geq 0\\
+            \Leftrightarrow n &\geq 100
+        \end{split}
+    \end{equation*}
+    
+    For constants $c = 2, n_0 = 100$, $0 \leq 100n + 10000 \leq cn^2$ $\forall n \geq n_0$. Therefore, $100n + 10000 = O(n^2)$.
+
+    \item $n^3 + 22n + 6 = O(n^3)$\\
+
+    Want to show that $\exists$ positive constants $c, n_0$ so that:
+
+    \begin{center}
+    $0 \leq n^3 + 22n + 6 \leq cn^3$ $\forall n \geq n_0$
+    \end{center}
+    
+    \begin{equation*}
+        \begin{split}
+            n^3 + 22n + 6 &> 0 \forall n \geq 0\\
+            \\
+            n^3 + 22n + 6 &\leq 2n^3\\
+            \Leftrightarrow n^3 - 22n - 6 &\geq 0\\
+            \Leftrightarrow n &\geq 5
+        \end{split}
+    \end{equation*}
+    
+    For constants $c=2$, $n_0 = 5$, $0 \leq n^3 + 22n + 6 \leq cn^3$ $\forall n \geq n_0$. Therefore, $n^3 + 22n + 6 = O(n^3)$.
+
+    \item $3n^2 - 5n + 12 = \Omega(n^2)$\\
+
+    Want to show ...
+    
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &> ?
+        \end{split}
+    \end{equation*}
+    
+    For constants $\epsilon \geq 1$, $?$, $...$. Therefore, $3n^2 - 5n + 12 = \Omega(n^2)$.
+
+    \item $n^\epsilon = \Omega(\log_{10} n)$ for any constant $\epsilon \geq 1 $\\
+
+    Want to show ...
+    
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &> ?
+        \end{split}
+    \end{equation*}
+    
+    For constants $\epsilon \geq 1$, $?$, $...$. Therefore, $n^\epsilon = \Omega(\log_{10} n)$.
+
+    \item $3n^3 + 6n - 3 = \Theta(n^3)$\\
+
+    Want to show ...
+    
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &< ?
+        \end{split}
+    \end{equation*}
+    
+    Therefore for constants $?$, $...$. We also show:
+    
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &> ?
+        \end{split}
+    \end{equation*}
+    
+    For constants $?$, $...$. Therefore, $3n^3 + 6n - 3 = \Theta(n^3)$.
+
+    \item $5\log_2 n + 8\log_{16} n = \Theta(\log_2 n)$\\
+
+    Want to show ...
+    
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &< ?
+        \end{split}
+    \end{equation*}
+    
+    Therefore for constants $?$, $...$. We also show:
+    
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &> ?
+        \end{split}
+    \end{equation*}
+    
+    For constants $?$, $...$. Therefore, $5\log_2 n + 8\log_{16} n = \Theta(\log_2 n)$.
+
+\end{enumerate}
+
+\section*{Recurrence Proofs}
+
+For each of the following recurrences, find a tight upper bound for $T(n)$. You may find the formulas sheet available on the Canvas homepage useful. Then prove that your bound is correct using induction.  In each case, assume that $T(n)$ is constant for $n \leq 2$ and that floor division applies to all recurrences.
+\vspace{\baselineskip}
+\begin{enumerate}
+\item $T(n) = T(n-1) + bn$ for some positive constant $b$\\
+
+    \begin{center}
+        Guess: $T(n) = $ ??\\
+    \end{center}
+    
+    Inductive Hypothesis: \\
+    Inductive Step:\\
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &< ?
+        \end{split}
+    \end{equation*}
+    
+    Let $a > 0$ be the constant runtime when $n\leq 2$. Base Case(s):
+    \begin{itemize}
+        \item ?
+    \end{itemize}  
+    
+    For constants $?$ $...$. Therefore, $...$.\\
+    
+\item $T(n) = T(n/2) + b$ for some positive constant $b$\\
+
+    \begin{center}
+        Guess: $T(n) = $ ??\\
+    \end{center}
+    
+    Inductive Hypothesis: \\
+    Inductive Step:\\
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &< ?
+        \end{split}
+    \end{equation*}
+    
+    Let $a > 0$ be the constant runtime when $n\leq 2$. Base Case(s):
+    \begin{itemize}
+        \item ?
+    \end{itemize}  
+    
+    For constants $?$ $...$. Therefore, $...$.\\
+    
+\item $T(n) = 8T(n/8) + bn^2$\\
+
+    \begin{center}
+        Guess: $T(n) = $ ??\\
+    \end{center}
+    
+    Inductive Hypothesis: \\
+    Inductive Step:\\
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &< ?
+        \end{split}
+    \end{equation*}
+    
+    Let $a > 0$ be the constant runtime when $n\leq 2$. Base Case(s):
+    \begin{itemize}
+        \item ?
+    \end{itemize}  
+    
+    For constants $?$ $...$. Therefore, $...$.\\
+    
+\item $T(n) = T(n/8) + bn^2$\\
+
+    \begin{center}
+        Guess: $T(n) = $ ??\\
+    \end{center}
+    
+    Inductive Hypothesis: \\
+    Inductive Step:\\
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &< ?
+        \end{split}
+    \end{equation*}
+    
+    Let $a > 0$ be the constant runtime when $n\leq 2$. Base Case(s):
+    \begin{itemize}
+        \item ?
+    \end{itemize}  
+    
+    For constants $?$ $...$. Therefore, $...$.\\
+    
+\item $T(n) = 5T(n/8) + bn$\\
+
+    \begin{center}
+        Guess: $T(n) = $ ??\\
+    \end{center}
+    
+    Inductive Hypothesis: \\
+    Inductive Step:\\
+    \begin{equation*}
+        \begin{split}
+            ? &= ?\\
+            &< ?
+        \end{split}
+    \end{equation*}
+    
+    Let $a > 0$ be the constant runtime when $n\leq 2$. Base Case(s):
+    \begin{itemize}
+        \item ?
+    \end{itemize}  
+    
+    For constants $?$ $...$. Therefore, $...$.\\
+    
+\end{enumerate}
+
+\end{document}
